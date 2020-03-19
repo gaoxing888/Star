@@ -6,6 +6,7 @@ const BALLS_COUNT = 25;
 const BALL_SIZE_MIN = 10;
 const BALL_SIZE_MAX = 20;
 const BALL_SPEED_MAX = 7;
+const para = document.querySelector('p');
 // 设定画布长宽
 const width = canvas.width = window.innerWidth;
 const height = canvas.height = window.innerHeight;
@@ -146,7 +147,7 @@ EvilCircle.prototype.collisionDetect = function() {
         if (distance < this.size + balls[j].size) {
           balls[j].exists = false;
           count--;
-          
+          para.textContent = '还剩 ' + count + ' 个球';
         }
     }
   }
